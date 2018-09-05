@@ -1,0 +1,121 @@
+<mat-error *ngIf="!isValid">There was an error! Are you sure the desired doctor exist?</mat-error>
+<div class="button-row">
+  <button mat-raised-button routerLink="/">Back to doctors list</button>
+</div>
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<div class="content" *ngIf="isValid">
+  <form [formGroup]="form" *ngIf="!isLoading">
+    <mat-card class="doctor-info">
+      <h4>Doctor detail</h4>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          readonly="true"
+          formControlName="name"
+          placeholder="Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          readonly="true"
+          formControlName="username"
+          placeholder="Username">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="email"
+          readonly="true"
+          formControlName="email"
+          placeholder="E-mail address">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="tel"
+          readonly="true"
+          formControlName="phone"
+          placeholder="Phone number">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="url"
+          readonly="true"
+          formControlName="website"
+          placeholder="Website">
+      </mat-form-field>
+
+      <h4>Company</h4>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          readonly="true"
+          formControlName="companyName"
+          placeholder="Company name">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          readonly="true"
+          formControlName="companycatchPhrase"
+          placeholder="Company catch phrase">
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          type="text"
+          readonly="true"
+          formControlName="companyBs"
+          placeholder="Company bs">
+      </mat-form-field>
+      <!-- <button mat-raised-button color="accent" type="submit">Save</button> -->
+    </mat-card>
+
+    <mat-card class="doctor-address">
+        <h4>Address</h4>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            readonly="true"
+            formControlName="street"
+            placeholder="Street">
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            readonly="true"
+            formControlName="suite"
+            placeholder="Suite">
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            readonly="true"
+            formControlName="city"
+            placeholder="City">
+        </mat-form-field>
+        <mat-form-field>
+          <input
+            matInput
+            type="text"
+            readonly="true"
+            formControlName="zipcode"
+            placeholder="Zipcode">
+        </mat-form-field>
+
+        <agm-map [latitude]="addressLat" [longitude]="addressLng">
+          <agm-marker [latitude]="addressLat" [longitude]="addressLng"></agm-marker>
+        </agm-map>
+      </mat-card>
+  </form>
+
+  <app-doctor-tasks></app-doctor-tasks>
+</div>

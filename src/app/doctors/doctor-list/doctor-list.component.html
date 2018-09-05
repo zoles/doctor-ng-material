@@ -1,0 +1,6 @@
+<mat-nav-list>
+  <mat-list-item *ngFor="let doc of doctors" [routerLink]="['/doctor', doc.id]">
+    <h1 mat-line>{{ doc.name }}</h1>
+    <h6 mat-line>{{ doc.company.bs }}</h6>
+ </mat-list-item>
+</mat-nav-list>

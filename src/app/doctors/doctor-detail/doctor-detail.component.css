@@ -1,0 +1,32 @@
+.button-row {
+  margin: 0.5em 1em;
+}
+form {
+  display: flex;
+  width: 100%;
+}
+
+mat-card,
+mat-error {
+  margin: 1em;
+  flex: auto;
+}
+.doctor-info {
+  width: 60%;
+}
+.doctor-address {
+  width: 40%;
+}
+
+mat-form-field,
+textarea {
+  width: 100%;
+}
+
+mat-spinner {
+  margin: auto;
+}
+
+agm-map {
+  height: 300px;
+}
